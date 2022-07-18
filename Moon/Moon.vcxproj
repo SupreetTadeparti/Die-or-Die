@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9E2F897C-8A66-8A0D-3353-70101F69060F}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Moon</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86_64\Moon\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Moon\</IntDir>
+    <TargetName>Moon</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\Moon\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\Moon\</IntDir>
+    <TargetName>Moon</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>MOON_PLATFORM_WINDOWS;MOON_BUILD_DLL;GLEW_STATIC;MOON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor;vendor\GLFW\include;vendor\GL\include;vendor\freetype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\lib;vendor\GL\lib;vendor\freetype\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\Moon\Moon.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Moon\Moon.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Moon\Moon.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Moon\Moon.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>MOON_PLATFORM_WINDOWS;MOON_BUILD_DLL;GLEW_STATIC;MOON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor;vendor\GLFW\include;vendor\GL\include;vendor\freetype\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32s.lib;opengl32.lib;glfw3.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>vendor\GLFW\lib;vendor\GL\lib;vendor\freetype\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Release-windows-x86_64\Moon\Moon.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Moon\Moon.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Moon\Moon.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Moon\Moon.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Moon.h" />
+    <ClInclude Include="src\Moon\Application.hpp" />
+    <ClInclude Include="src\Moon\Audio.hpp" />
+    <ClInclude Include="src\Moon\Buffer.hpp" />
+    <ClInclude Include="src\Moon\Camera.hpp" />
+    <ClInclude Include="src\Moon\Core.h" />
+    <ClInclude Include="src\Moon\Entity.hpp" />
+    <ClInclude Include="src\Moon\EntryPoint.h" />
+    <ClInclude Include="src\Moon\Event.hpp" />
+    <ClInclude Include="src\Moon\Logger.hpp" />
+    <ClInclude Include="src\Moon\Material.hpp" />
+    <ClInclude Include="src\Moon\Math.hpp" />
+    <ClInclude Include="src\Moon\Model.hpp" />
+    <ClInclude Include="src\Moon\ModelLoader.hpp" />
+    <ClInclude Include="src\Moon\Models.hpp" />
+    <ClInclude Include="src\Moon\Renderer.hpp" />
+    <ClInclude Include="src\Moon\Shader.hpp" />
+    <ClInclude Include="src\Moon\Text.hpp" />
+    <ClInclude Include="src\Moon\Util.hpp" />
+    <ClInclude Include="src\Moon\VertexArray.hpp" />
+    <ClInclude Include="src\Moon\Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Moon\Application.cpp" />
+    <ClCompile Include="src\Moon\Audio.cpp" />
+    <ClCompile Include="src\Moon\Buffer.cpp" />
+    <ClCompile Include="src\Moon\Camera.cpp" />
+    <ClCompile Include="src\Moon\Entity.cpp" />
+    <ClCompile Include="src\Moon\Event.cpp" />
+    <ClCompile Include="src\Moon\Logger.cpp" />
+    <ClCompile Include="src\Moon\Material.cpp" />
+    <ClCompile Include="src\Moon\Math.cpp" />
+    <ClCompile Include="src\Moon\Model.cpp" />
+    <ClCompile Include="src\Moon\ModelLoader.cpp" />
+    <ClCompile Include="src\Moon\Models.cpp" />
+    <ClCompile Include="src\Moon\Renderer.cpp" />
+    <ClCompile Include="src\Moon\Shader.cpp" />
+    <ClCompile Include="src\Moon\Text.cpp" />
+    <ClCompile Include="src\Moon\Util.cpp" />
+    <ClCompile Include="src\Moon\VertexArray.cpp" />
+    <ClCompile Include="src\Moon\Window.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

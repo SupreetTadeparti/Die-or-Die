@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Moon">
+      <UniqueIdentifier>{9E2F897C-8A66-8A0D-3353-70101F69060F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Moon.h" />
+    <ClInclude Include="src\Moon\Application.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Audio.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Buffer.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Camera.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Core.h">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Entity.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\EntryPoint.h">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Event.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Logger.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Material.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Math.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Model.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\ModelLoader.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Models.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Renderer.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Shader.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Text.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Util.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\VertexArray.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moon\Window.hpp">
+      <Filter>Moon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Moon\Application.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Audio.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Buffer.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Camera.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Entity.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Event.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Logger.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Material.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Math.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Model.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\ModelLoader.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Models.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Renderer.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Shader.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Text.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Util.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\VertexArray.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moon\Window.cpp">
+      <Filter>Moon</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
